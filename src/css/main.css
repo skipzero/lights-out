@@ -2,8 +2,9 @@
   margin-top: 20px;
 }
 .col-md-1 {
+  border-radius: 40px;
   cursor:pointer;
   float:left;
   border: 1px solid #f00;
-  height:90px;
+  height:80px;
 }
