@@ -1,17 +1,14 @@
 {
-  "name": "ludumdare31",
+  "name": "Lights-Out",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chris Richards",
   "license": "MIT",
   "dependencies": {
-    "brfs": "^1.2.0",
-    "browserify": "^7.0.0",
-    "dot": "^1.0.3",
     "http-server": "^0.7.4",
     "jshint": "^2.5.10"
   }

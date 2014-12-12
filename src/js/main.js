@@ -1,4 +1,4 @@
-/*global require, $, _, console, Ractive */
+/*global require, $, _, console */
 'use strict';
 
 var game = {};
