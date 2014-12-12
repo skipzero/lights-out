@@ -1,3 +1,9 @@
-body {
-  background-color: red;
+.container {
+  margin-top: 20px;
+}
+.col-md-1 {
+  cursor:pointer;
+  float:left;
+  border: 1px solid #f00;
+  height:90px;
 }

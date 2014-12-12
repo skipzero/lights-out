@@ -1,5 +1,9 @@
 /*global require, $, _, console */
 'use strict';
 
-var game = {};
+var game = {
+    $('.container .row').on('click', 'div', function() {
+        
+    })
+};
 window.Game = game;
