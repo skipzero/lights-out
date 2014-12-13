@@ -4,10 +4,18 @@
 var game = {
     counter: 0,
 
+    arr: console.log($('.row').toArray()),
+
+    random: function() {
+
+    },
+
     click: $('.container .row').on('click', 'div', function() {
         console.log($(this).css('background-color'))
-        if ($(this).css('background-color') === 'rgba(0, 0, 0, 0)') {
-            console.log('w00t!')
+        if ($(this).css('background-color') === 'rgb(255, 255, 255)') {
+            $(this).css('background-color', '#0f0')
+        } else {
+            $(this).css('background-color', '#fff')
         }
     })
 };

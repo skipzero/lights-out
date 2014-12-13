@@ -2,7 +2,9 @@
   margin-top: 20px;
 }
 .col-md-1 {
+  background-color: #fff;
   border-radius: 40px;
+  margin:5px;
   cursor:pointer;
   float:left;
   border: 1px solid #f00;
