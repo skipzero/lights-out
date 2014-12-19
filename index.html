@@ -18,8 +18,9 @@
     <script type='text/template' id="game-template">
       <% for(var row in game.board()) { %>
         <div class="row">
-        <% for(var cell in row) { %>
-        <% console.log(row, cell) %>
+        <% console.log('row: ' + row) %>
+        <% for(var cells in row) { %>
+        <% console.log(row, cells) %>
           <div class="col-md-1"> </div>
         <% } %>
         </div>

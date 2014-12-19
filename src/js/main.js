@@ -6,13 +6,12 @@ var game = {
 
     board: function () {
         var playBoard = [],
-            size = 5,
-            boardInit;
+            size = 5;
 
         for (var i = 0; i < size; i++) {
             playBoard[i] = [];
             for (var j = 0; j < size; j++) {
-                playBoard[i][j] = boardInit;
+                playBoard[i][j] = [i,j];
             }
         } 
         return playBoard;
