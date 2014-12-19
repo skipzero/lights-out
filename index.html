@@ -11,16 +11,18 @@
     <link rel="stylesheet" href="src/css/main.css">
   </head>
   <body>
-    <div id="container">
+    <div class="container">
 
     </div>
 
     <script type='text/template' id="game-template">
       <% for(var row in game.board()) { %>
+        <div class="row">
         <% for(var cell in row) { %>
-        <% console.log(row,cell) %>
+        <% console.log(row, cell) %>
           <div class="col-md-1"> </div>
         <% } %>
+        </div>
       <% } %>
     </script>
 

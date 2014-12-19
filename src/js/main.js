@@ -25,4 +25,4 @@ var game = {
 };
 
 var gameView = $('#game-template').html();
-$('#container').append(_.template(gameView, game.game()));
+$('.container').append(_.template(gameView, game.game()));
