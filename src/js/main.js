@@ -13,7 +13,6 @@ var game = {
             playBoard[i] = [];
             for (var j = 0; j < size; j++) {
                 playBoard[i][j] = boardInit;
-        console.log(playBoard);
             }
         } 
         return playBoard;
@@ -26,5 +25,4 @@ var game = {
 };
 
 var gameView = $('#game-template').html();
-$('#container').append(_.template(gameView, game.board()));
-window.Game = game.game();
+$('#container').append(_.template(gameView, game.game()));
