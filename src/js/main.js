@@ -9,21 +9,23 @@ var game = {
             size = 5,
             boardInit;
 
-        console.log('board');
         for (var i = 0; i < size; i++) {
             playBoard[i] = [];
             for (var j = 0; j < size; j++) {
                 playBoard[i][j] = boardInit;
             }
-        }
-        console.log(playBoard); 
+        } 
         return playBoard;
     },
 
     game: function (playBoard) {
-        playBoard = game.board();
-        console.log(playBoard);
+        playBoard = game.board(); 
+        console.log(playBoard); 
+        return playBoard;
     }
 };
+console.log(game.board());
 
+        var gameView = $('#game-template').html();
+        $('#container').append(_.template(gameView, game.board()));
 window.Game = game.game();

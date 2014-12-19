@@ -11,9 +11,15 @@
     <link rel="stylesheet" href="src/css/main.css">
   </head>
   <body>
-    <div class="container">
+    <div id="container">
 
     </div>
+
+    <script type='text/template' id="game-template">
+      <% for(var cell in game.board()) { %>
+        <div class="col-md-1"> </div>
+      <% } %>
+    </script>
 
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
