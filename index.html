@@ -16,8 +16,9 @@
     </div>
 
     <script type='text/template' id="game-template">
-      <% for(var row in game.board()) { %>
-        <% for(var cell in row) { %>
+      <% for(var cell in game.board()) { %>
+        <% for(var row in game.board()) %>
+        <% console.log(row,cell) %>
           <div class="col-md-1"> </div>
         <% } %>
       <% } %>
