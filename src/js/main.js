@@ -1,23 +1,29 @@
 /*global require, $, _, console */
 'use strict';
-
+ 
 var game = {
-    counter: 0,
+    playBoard: [],
 
-    arr: console.log($('.row').toArray()),
+    board: function () {
+        var playBoard = [],
+            size = 5,
+            boardInit;
 
-    random: function() {
-
+        console.log('board');
+        for (var i = 0; i < size; i++) {
+            playBoard[i] = [];
+            for (var j = 0; j < size; j++) {
+                playBoard[i][j] = boardInit;
+            }
+        }
+        console.log(playBoard); 
+        return playBoard;
     },
 
-    click: $('.container .row').on('click', 'div', function() {
-        console.log($(this).css('background-color'))
-        if ($(this).css('background-color') === 'rgb(255, 255, 255)') {
-            $(this).css('background-color', '#0f0')
-        } else {
-            $(this).css('background-color', '#fff')
-        }
-    })
+    game: function (playBoard) {
+        playBoard = game.board();
+        console.log(playBoard);
+    }
 };
 
-window.Game = game;
+window.Game = game.game();
