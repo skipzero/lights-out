@@ -11,7 +11,7 @@ var game = {
         for (var i = 0; i < size; i++) {
             playBoard[i] = [];
             for (var j = 0; j < size; j++) {
-                playBoard[i][j] = [i,j];
+                playBoard[i][j] = [];
             }
         } 
         return playBoard;
@@ -24,4 +24,4 @@ var game = {
 };
 
 var gameView = $('#game-template').html();
-$('.container').append(_.template(gameView, game.game()));
+$('.container').append(_.template(gameView));
