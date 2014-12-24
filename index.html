@@ -20,8 +20,8 @@
       <% for(var i = 0; i < playBoard.length; i++) { %>
         <div class="row">
         <% for(var j = 0; j < playBoard[i].length; j++) { %>
-        <% console.log(i, j) %>
-          <div class="col-md-1"> </div>
+          <%= '<div class="col-md-1 light ' + i + '-' + j + '"> </div>' %>
+          <% console.log(i,j); %>
         <% } %>
         </div>
       <% } %>
