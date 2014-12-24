@@ -1,12 +1,17 @@
 .container {
   margin-top: 20px;
 }
+
 .col-md-1 {
   background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 40px;
   margin:5px;
   cursor:pointer;
   float:left;
-  border: 1px solid #f00;
   height:80px;
+}
+
+.on {
+	background: radial-gradient(circle, #0f0 20%, #fff 70%);
 }
