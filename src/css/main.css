@@ -2,14 +2,19 @@
   margin-top: 20px;
 }
 
-.col-md-1 {
+.board {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.light {
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 40px;
+  border-radius: 55px;
   margin:5px;
   cursor:pointer;
   float:left;
-  height:80px;
+  height:109px;
 }
 
 .on {
