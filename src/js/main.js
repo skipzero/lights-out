@@ -52,6 +52,9 @@ var game = {
             $(this).toggleClass('on', console.log($(this)));
             game.won();
         });
+        $('#instructions').on('click', function() {
+            $('.instructions').toggleClass('hide');
+        });
     }
 };
 

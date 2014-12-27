@@ -20,3 +20,11 @@
 .on {
 	background: radial-gradient(circle, #0f0 20%, #fff 70%);
 }
+
+.hide {
+	max-height:0px;
+}
+
+.show {
+	max-height:100px;
+}
