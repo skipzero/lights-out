@@ -17,18 +17,20 @@ var game = {
             aMin = 0,
             aMax = 5,
             i,
+            lightSelected,
             j,
             lStart = Math.floor(Math.random() * (maxStart - minStart)) + minStart;
         console.log(lStart);
         for (var k = 0; k <= lStart; k++) {
             i = Math.floor(Math.random() * (aMax - aMin) + aMin);
             j = Math.floor(Math.random() * (aMax - aMin) + aMin);
-            $('.'+i+'-'+j).addClass('on');
+            lightSelected = i+'-'+j;
+            $('.light[data-light="'+lightSelected+'"]').addClass('on');
         }  
     },
 
     won: function () {
-        if (!$('.on')) {
+        if (!$('.light').hasClass('on')) {
             console.log('bang!')
         }
     },
@@ -49,11 +51,11 @@ var game = {
     game: function(){
         game.render();
         $('.container').on('click', '.light', function (){
-            $(this).toggleClass('on', console.log($(this)));
+            $(this).toggleClass('on', console.log($(this).data('light')));
             game.won();
         });
         $('#instructions').on('click', function() {
-            $('.instructions').toggleClass('hide');
+            $('.instructions').toggleClass('hide show');
         });
     }
 };

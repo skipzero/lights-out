@@ -22,9 +22,11 @@
 }
 
 .hide {
-	max-height:0px;
+	max-height:0;
+	transition: max-height 1s ease-out;
 }
 
 .show {
-	max-height:100px;
+	max-height:500px;
+	transition: max-height 1s ease-in;
 }
