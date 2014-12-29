@@ -48,12 +48,32 @@ var game = {
         return playBoard;
     }, 
 
+    connectedLights: function(targetLight) {
+
+        var targetY = parseFloat(targetLight[0]), 
+            targetX = parseFloat(targetLight[1]),
+            yTop = targetY - 1,
+            xLeft = targetX - 1,
+            yBottom = targetY + 1,
+            xRight = targetX + 1;
+            console.log(yTop, xLeft);
+
+            $('.light[data-light="'+yTop+'-'+targetX+'"]').toggleClass('on');
+            $('.light[data-light="'+yBottom+'-'+targetX+'"]').toggleClass('on');
+            $('.light[data-light="'+targetY+'-'+xLeft+'"]').toggleClass('on');
+            $('.light[data-light="'+targetY+'-'+xRight+'"]').toggleClass('on');
+    },
+
     game: function(){
         game.render();
         $('.container').on('click', '.light', function (){
-            $(this).toggleClass('on', console.log($(this).data('light')));
+            var targetLight = $(this).data('light').split('-');
+            $(this).toggleClass('on');
+            console.log(targetLight);
+            game.connectedLights(targetLight);
             game.won();
         });
+
         $('#instructions').on('click', function() {
             $('.instructions').toggleClass('hide show');
         });
