@@ -3,22 +3,31 @@
 }
 
 .board {
-	width: 600px;
+	width: 670px;
 	margin: 0 auto;
 }
 
 .light {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 55px;
+  background: radial-gradient(circle, #999 40%, #fc0 60%);
+  border-radius: 65px;
   margin:5px;
+  padding:0;
   cursor:pointer;
   float:left;
-  height:109px;
+  width:130px;
 }
 
-.on {
-	background: radial-gradient(circle, #0f0 20%, #fff 70%);
+.light span {
+  background:#fff;
+  border-radius: 55px;
+  display: block;
+  height:100px;
+  margin:15px;
+  width:100px;
+}
+
+.light.on span {
+	background: radial-gradient(circle, #0f0 20%, #999 70%);
 }
 .instructions {
   overflow: hidden;
@@ -27,11 +36,11 @@
 .instructions-hide {
   display: block;
 	max-height:0px;
-	transition: max-height 1s ease-out;
+	transition: max-height .5s ease-out;
 }
 
 .instructions-show {
   display: block;
 	max-height:500px;
-	transition: max-height 1s ease-in;
+	transition: max-height .5s ease-in;
 }

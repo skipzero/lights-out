@@ -33,8 +33,9 @@ var game = {
     },
 
     won: function () {
-        if (!$('.light').hasClass('on')) {
-            $('.instructions').toggleClass('hide show');
+        if (!$('.light').hasClass('on')) { 
+            $('.instructions').html('Congratulations!! You got all the lights out. click here to play again! <a href="javascript:game.game()">Replay now</a>');
+            $('.instructions').toggleClass('instructions-hide instructions-show');
         }
     },
 
