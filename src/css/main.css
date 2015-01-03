@@ -20,13 +20,18 @@
 .on {
 	background: radial-gradient(circle, #0f0 20%, #fff 70%);
 }
+.instructions {
+  overflow: hidden;
+}
 
-.hide {
-	max-height:0;
+.instructions-hide {
+  display: block;
+	max-height:0px;
 	transition: max-height 1s ease-out;
 }
 
-.show {
+.instructions-show {
+  display: block;
 	max-height:500px;
 	transition: max-height 1s ease-in;
 }

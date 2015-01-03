@@ -12,14 +12,17 @@ var game = {
     },
 
     lightInit: function(){  //randomly light between 10 and 15 lights at the start
-        var maxStart = 16, 
-            minStart = 10,
+        var maxStart = 20, 
+            minStart = 4,
             aMin = 0,
             aMax = 5,
             i,
             lightSelected,
             j,
             lStart = Math.floor(Math.random() * (maxStart - minStart)) + minStart;
+            if (lStart % 2 === 1) {
+                lStart = lStart + 1; // must be even in order for puzzle to be solved, I believe. 
+            }
         console.log(lStart);
         for (var k = 0; k <= lStart; k++) {
             i = Math.floor(Math.random() * (aMax - aMin) + aMin);
@@ -31,7 +34,7 @@ var game = {
 
     won: function () {
         if (!$('.light').hasClass('on')) {
-            console.log('bang!')
+            $('.instructions').toggleClass('hide show');
         }
     },
 
@@ -56,7 +59,6 @@ var game = {
             xLeft = targetX - 1,
             yBottom = targetY + 1,
             xRight = targetX + 1;
-            console.log(yTop, xLeft);
 
             $('.light[data-light="'+yTop+'-'+targetX+'"]').toggleClass('on');
             $('.light[data-light="'+yBottom+'-'+targetX+'"]').toggleClass('on');
@@ -69,13 +71,12 @@ var game = {
         $('.container').on('click', '.light', function (){
             var targetLight = $(this).data('light').split('-');
             $(this).toggleClass('on');
-            console.log(targetLight);
             game.connectedLights(targetLight);
             game.won();
         });
 
         $('#instructions').on('click', function() {
-            $('.instructions').toggleClass('hide show');
+            $('.instructions').toggleClass('instructions-hide instructions-show');
         });
     }
 };
