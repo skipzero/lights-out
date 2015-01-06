@@ -18,7 +18,7 @@
 }
 
 .light span {
-  background:#fff;
+  background: radial-gradient(circle, #fff 20%, #ccc 80%);
   border-radius: 55px;
   display: block;
   height:100px;

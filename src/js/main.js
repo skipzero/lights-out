@@ -1,4 +1,4 @@
-/*global require, $, _, console */
+/*global $, _, console */
 'use strict';
 
 var game = { 
