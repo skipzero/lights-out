@@ -12,7 +12,7 @@ var game = {
     },
 
     lightInit: function(){  //randomly light between 10 and 15 lights at the start
-        var maxStart = 20, 
+        var maxStart = 18, 
             minStart = 4,
             aMin = 0,
             aMax = 5,
@@ -20,16 +20,14 @@ var game = {
             lightSelected,
             j,
             lStart = Math.floor(Math.random() * (maxStart - minStart)) + minStart;
-            if (lStart % 2 === 1) {
-                lStart = lStart + 1; // must be even in order for puzzle to be solved, I believe. 
-            }
-        console.log(lStart);
+
         for (var k = 0; k <= lStart; k++) {
             i = Math.floor(Math.random() * (aMax - aMin) + aMin);
             j = Math.floor(Math.random() * (aMax - aMin) + aMin);
             lightSelected = i+'-'+j;
             $('.light[data-light="'+lightSelected+'"]').addClass('on');
-        }  
+        }
+        game.connectedLights(lightSelected);
     },
 
     won: function () {

@@ -9,7 +9,7 @@
 
 .board {
 	width: 725px;
-	margin: 0 auto;
+	margin: 0 auto 20px;
   padding:10px;
   border: 1px solid #999;
   border-radius: 25px;
