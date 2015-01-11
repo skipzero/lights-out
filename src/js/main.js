@@ -32,9 +32,13 @@ var game = {
 
     won: function () {
         if (!$('.light').hasClass('on')) { 
-            $('.instructions').html('Congratulations!! You got all the lights out. click here to play again! <a href="javascript:game.game()">Replay now</a>');
+            $('.instructions').html('Congratulations!! You got all the lights out. click here to play again! <a id="replay" href="javascript:void(0)">Replay now</a>');
             $('.instructions').toggleClass('instructions-hide instructions-show');
         }
+        $('#replay').on('click', function() {
+            game.render();
+        })
+
     },
 
     board: function () {
