@@ -1,4 +1,4 @@
-/*global $, _, console */
+/*global $, require, _, console */
 'use strict';
 
 var game = { 
@@ -9,10 +9,24 @@ var game = {
 
         $('.container').append(_.template(gameView, playBoard));
         game.lightInit();
+        game.clicks();
     },
 
-    lightInit: function(){  //randomly light between 10 and 15 lights at the start
-        var maxStart = 18, 
+    clicks: function() {
+        $('.container').on('click', '.light', function (){  //handle light click events
+            var targetLight = $(this).data('light').split('-');
+            $(this).toggleClass('on');
+            game.connectedLights(targetLight);
+            game.won();
+        });
+
+        $('#instructions').on('click', function() {  //hide/show instructions
+            $('.instructions').toggleClass('instructions-hide instructions-show');
+        });
+    },
+
+    lightInit: function(){  //randomly light between 10 and 16 lights at the start
+        var maxStart = 17, 
             minStart = 4,
             aMin = 0,
             aMax = 5,
@@ -37,7 +51,7 @@ var game = {
         }
         $('#replay').on('click', function() {
             game.render();
-        })
+        });
 
     },
 
@@ -55,7 +69,6 @@ var game = {
     }, 
 
     connectedLights: function(targetLight) {
-
         var targetY = parseFloat(targetLight[0]), 
             targetX = parseFloat(targetLight[1]),
             yTop = targetY - 1,
@@ -67,21 +80,7 @@ var game = {
             $('.light[data-light="'+yBottom+'-'+targetX+'"]').toggleClass('on');
             $('.light[data-light="'+targetY+'-'+xLeft+'"]').toggleClass('on');
             $('.light[data-light="'+targetY+'-'+xRight+'"]').toggleClass('on');
-    },
-
-    game: function(){
-        game.render();
-        $('.container').on('click', '.light', function (){
-            var targetLight = $(this).data('light').split('-');
-            $(this).toggleClass('on');
-            game.connectedLights(targetLight);
-            game.won();
-        });
-
-        $('#instructions').on('click', function() {
-            $('.instructions').toggleClass('instructions-hide instructions-show');
-        });
     }
 };
 
-window.Game = game.game();
+window.Game = game.render();

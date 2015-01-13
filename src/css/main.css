@@ -1,3 +1,7 @@
+a, a:hover, a:focus {
+  text-decoration: none;
+}
+
 .container {
   margin-top: 20px;
 }
@@ -8,38 +12,61 @@
 }
 
 .board {
-	width: 725px;
-	margin: 0 auto 20px;
+	width: 625px;
+	margin: 0 0 20px 300PX;
   padding:10px;
-  border: 1px solid #999;
   border-radius: 25px;
-  background: #ccc;
+  background: #D1E0F0;
 }
 
 .light {
-  background: radial-gradient(circle, #999 40%, #fc0 60%);
+  background: radial-gradient(circle, #cdd 50%, #72BBF7 70%);
   border-radius: 65px;
   margin:5px;
   padding:0;
   cursor:pointer;
   float:left;
-  width:130px;
+  width:110px;
+  height: 110px
 }
 
 .light span {
-  background: radial-gradient(circle, #fff 20%, #ccc 80%);
-  border-radius: 55px;
+  background: radial-gradient(circle, #fff 20%, #999 80%);
+  border: 1px solid #909090;
+  border-radius: 40px;
   display: block;
-  height:100px;
+  height: 80px;
   margin:15px;
-  width:100px;
+  width:80px;
 }
 
 .light.on span {
-	background: radial-gradient(circle, #0f0 20%, #999 70%);
+	background: radial-gradient(circle, #80B7F2 20%, #999 70%);
 }
+
+.messages {
+  text-transform: capitalize;
+  position: relative;
+}
+
+.messages h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 auto;
+  width: 220px;
+}
+
+.messages a {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
 .instructions {
+  font-size: 20px;
   overflow: hidden;
+  position: absolute;
+  width: 250px;
 }
 
 .instructions-hide {
@@ -50,6 +77,10 @@
 
 .instructions-show {
   display: block;
-	max-height:500px;
+	max-height:600px;
 	transition: max-height .5s ease-in;
 }
+
+
+
+
