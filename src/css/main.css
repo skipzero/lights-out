@@ -20,7 +20,7 @@ a, a:hover, a:focus {
 }
 
 .light {
-  background: radial-gradient(circle, #cdd 50%, #72BBF7 70%);
+  background: radial-gradient(circle, #cdd 50%, #72BBF7 80%);
   border-radius: 65px;
   margin:5px;
   padding:0;
@@ -45,11 +45,11 @@ a, a:hover, a:focus {
 }
 
 .messages {
-  text-transform: capitalize;
   position: relative;
 }
 
 .messages h1 {
+  color:#35679C;
   font-size: 36px;
   font-weight: bold;
   text-transform: uppercase;
@@ -62,9 +62,15 @@ a, a:hover, a:focus {
   text-transform: uppercase;
 }
 
+.messages .instructions:first-letter {
+  text-transform: capitalize;
+}
+
 .instructions {
+  color:#999;
   font-size: 20px;
   overflow: hidden;
+  margin-top:30px;
   position: absolute;
   width: 250px;
 }
