@@ -17,6 +17,7 @@ a, a:hover, a:focus {
   padding:10px;
   border-radius: 25px;
   background: #D1E0F0;
+  box-shadow: 6px 6px 10px #999;
 }
 
 .light {
@@ -27,7 +28,8 @@ a, a:hover, a:focus {
   cursor:pointer;
   float:left;
   width:110px;
-  height: 110px
+  height: 110px;
+  box-shadow: 4px 4px 8px #999;
 }
 
 .light span {
