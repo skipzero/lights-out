@@ -77,6 +77,13 @@ a, a:hover, a:focus {
   width: 250px;
 }
 
+.instructions .gh {
+  display: block;
+  font-size: 14px;
+  text-transform: none;
+  text-align: center;
+}
+
 .instructions-hide {
   display: block;
 	max-height:0px;
@@ -88,7 +95,3 @@ a, a:hover, a:focus {
 	max-height:600px;
 	transition: max-height .5s ease-in;
 }
-
-
-
-
