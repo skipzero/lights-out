@@ -2,12 +2,12 @@ Lights Out is an electronic game released by Tiger Electronics in 1995. The game
 
 [LightsOut](http://en.wikipedia.org/wiki/Lights_Out_%28game%29)
 
-## Demo
-
-You can see it in action at [zerosquadron.github.io/lights-out](http://zerosquadron.github.io/lights-out)
-
+## Installation
+This was originally done quite a while back in vanilla JS, pre ES6. You can find that code under the 'old-version' branch in this repo. the master branch is now being updated to use react and a more modern method of doing it.
 
 ## HOW TO RUN
-Clone or download the repo, on the commandline navigate into the repo and type:
+to make it easy, you just need to navigate to the repo's folder and run:
 
-    make run
+$  make run
+
+this should install all dependancies and start the server locally.
