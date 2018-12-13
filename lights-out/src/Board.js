@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component {
+class Board extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -9,7 +9,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="board">
         <header className="App-header">
           <h3>Lights Out Game</h3>
           <Light />
@@ -22,9 +22,9 @@ class App extends Component {
 class Light extends Component {
   render() {
     return (
-      <button className="light">{ this.props.value}</button>
+      <button className="light">{ this.props.value }</button>
     )
   }
 }
 
-export default App;
+export default Board;

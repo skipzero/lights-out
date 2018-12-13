@@ -2,7 +2,7 @@ Lights Out is an electronic game released by Tiger Electronics in 1995. The game
 
 [LightsOut](http://en.wikipedia.org/wiki/Lights_Out_%28game%29)
 
-## Installation
+## Installing
 This was originally done quite a while back in vanilla JS, pre ES6. You can find that code under the 'old-version' branch in this repo. the master branch is now being updated to use react and a more modern method of doing it.
 
 ## HOW TO RUN

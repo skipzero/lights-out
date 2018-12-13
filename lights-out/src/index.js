@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './index.css';
-import App from './App';
+import Board from './Board';
 
-render(<App />, document.getElementById('root'));
+render(<Board />, document.getElementById('container'));
