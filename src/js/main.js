@@ -1,89 +1,88 @@
-/*global $, _ */
+/*global $, require, _, console */
 'use strict';
 
-const game = {
+var game = {
 
-  render: () => {
-    const gameView = $('#game-template').html();
-    let playBoard;
+    render: function() {
+        var gameView = $('#game-template').html(),
+            playBoard;
 
-    $('.container').append(_.template(gameView, playBoard));
-    game.lightInit();
-    game.clicks();
-  },
+        $('.container').append(_.template(gameView, playBoard));
+        game.lightInit();
+        game.clicks();
+    },
 
-  clicks: () => {
-    $('.container').on('click', '.light', () => {  //handle light click events
-      const targetLight = $(this).data('light').split('-');
+    clicks: function() {
+        $('.container').on('click', '.light', function (){  //handle light click events
+            var targetLight = $(this).data('light').split('-');
+            $(this).toggleClass('on');
+            game.connectedLights(targetLight);
+            game.won();
+        });
 
-      $(this).toggleClass('on');
-      game.connectedLights(targetLight);
-      game.won();
-    });
+        $('#instructions').on('click', function() {  //hide/show instructions
+            $('.instructions').toggleClass('instructions-hide instructions-show');
+        });
+    },
 
-    $('#instructions').on('click', () => {  //hide/show instructions
-      $('.instructions').toggleClass('instructions-hide instructions-show');
-    });
-  },
+    lightInit: function(){  //randomly light between 10 and 16 lights at the start
+        var maxStart = 17,
+            minStart = 4,
+            aMin = 0,
+            aMax = 5,
+            i,
+            lightSelected,
+            j,
+            lStart = Math.floor(Math.random() * (maxStart - minStart)) + minStart;
 
-  lightInit: () => {  //randomly light between 10 and 16 lights at the start
-    const maxStart = 17;
-    const minStart = 4;
-    const aMin = 0;
-    const aMax = 5;
-    const lStart = Math.floor(Math.random() * (maxStart - minStart)) + minStart;
+        for (var k = 0; k <= lStart; k++) {
+            i = Math.floor(Math.random() * (aMax - aMin) + aMin);
+            j = Math.floor(Math.random() * (aMax - aMin) + aMin);
+            lightSelected = i+'-'+j;
+            $('.light[data-light="'+lightSelected+'"]').addClass('on');
+        }
+        game.connectedLights(lightSelected);
+    },
 
-    for (let k = 0; k <= lStart; k++) {
-      let i = Math.floor(Math.random() * (aMax - aMin) + aMin);
-      let j = Math.floor(Math.random() * (aMax - aMin) + aMin);
-      let lightSelected = `${i}-${j}`;
+    won: function () {
+        var yWon = 'Congratulations! You got all the lights out. click here to play again!',
+            ayWon = '<a id="replay" href="javascript:void(0)">Replay now</a>';
+        if (!$('.light').hasClass('on')) {
+            $('.instructions').html(yWon + ayWon);
+            $('.instructions').toggleClass('instructions-hide instructions-show');
+        }
+        $('#replay').on('click', function() {
+            game.render();
+        });
 
-      $(`.light[data-light="${lightSelected}"]`).addClass('on');
-      game.connectedLights(lightSelected);
+    },
+
+    board: function () {
+        var playBoard = [],
+            size = 5;
+
+        for (var i = 0; i < size; i++) {
+            playBoard[i] = [];
+            for (var j = 0; j < size; j++) {
+                playBoard[i][j] = [];
+            }
+        }
+        return playBoard;
+    },
+
+    connectedLights: function(targetLight) {
+        var targetY = parseInt(targetLight[0]),
+            targetX = parseInt(targetLight[1]),
+            yTop = targetY - 1,
+            xLeft = targetX - 1,
+            yBottom = targetY + 1,
+            xRight = targetX + 1;
+
+            $('.light[data-light="'+yTop+'-'+targetX+'"]').toggleClass('on');
+            $('.light[data-light="'+yBottom+'-'+targetX+'"]').toggleClass('on');
+            $('.light[data-light="'+targetY+'-'+xLeft+'"]').toggleClass('on');
+            $('.light[data-light="'+targetY+'-'+xRight+'"]').toggleClass('on');
     }
-  },
-
-  won: function () {
-    const yWon = 'Congratulations! You got all the lights out. click here to play again!';
-    const ayWon = '<a id="replay" href="javascript:void(0)">Replay now</a>';
-
-    if (!$('.light').hasClass('on')) {
-      $('.instructions').html(yWon + ayWon);
-      $('.instructions').toggleClass('instructions-hide instructions-show');
-    }
-
-    $('#replay').on('click', () => {
-      game.render();
-    });
-  },
-
-  board: () => {
-    const size = 5;
-    let playBoard = [];
-
-    for (let i = 0; i < size; i++) {
-      playBoard[i] = [];
-
-      for (let j = 0; j < size; j++) {
-        playBoard[i][j] = [];
-      }
-    }
-    return playBoard;
-  },
-
-  connectedLights: (targetLight) => {
-    const targetY = parseInt(targetLight[0]);
-    const targetX = parseInt(targetLight[1]);
-    const yTop = targetY - 1;
-    const xLeft = targetX - 1;
-    const yBottom = targetY + 1;
-    const xRight = targetX + 1;
-
-    $(`.light[data-light="${yTop}-${targetX}"]`).toggleClass('on');
-    $(`.light[data-light="${yBottom}-${targetX}"]`).toggleClass('on');
-    $(`.light[data-light="${targetY}-${xLeft}"]`).toggleClass('on');
-    $(`.light[data-light="${targetY}-${xRight}"]`).toggleClass('on');
-  }
 };
 
 window.Game = game.render();
