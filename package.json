@@ -9,7 +9,7 @@
   "author": "Skip McBride",
   "license": "MIT",
   "dependencies": {
-    "http-server": "^0.7.4",
-    "jshint": "^2.5.10"
+    "http-server": "^0.11.1",
+    "jshint": "^2.9.7"
   }
 }
