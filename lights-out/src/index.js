@@ -3,4 +3,8 @@ import { render } from 'react-dom';
 import './index.css';
 import Board from './Board';
 
-render(<Board />, document.getElementById('container'));
+const state = {
+  boardSize: 5,
+};
+
+render(<Board gameProps={state}/>, document.getElementById('container'));

@@ -2,18 +2,24 @@ import React, { Component } from 'react';
 import './App.css';
 
 class Board extends Component {
-  constructor(props) {
-    super(props);
-    this.props = props;
-    this.state = { };
+
+  board() {
+    let boardSize = this.props.gameProps.boardSize ;
+    boardSize = boardSize * boardSize;
+    let boardArray = [];
+    for(let i = 0; i < boardSize; i++) {
+      boardArray.push(<Light key={i + 1} col={i + 1} />);
+    }
+    return boardArray;
   }
+
   render() {
     return (
-      <div className="board">
-        <header className="App-header">
-          <h3>Lights Out Game</h3>
-          <Light />
-        </header>
+      <div className='game'>
+        <h3>Lights Out Game</h3>
+        <div className='board'>
+          {this.board()}
+        </div>
       </div>
     );
   }
@@ -22,9 +28,13 @@ class Board extends Component {
 class Light extends Component {
   render() {
     return (
-      <button className="light">{ this.props.value }</button>
+      <button className='light' col={this.props.col}>{ this.props.col }</button>
     )
   }
 }
+
+// class Row extends Component {
+//
+// }
 
 export default Board;

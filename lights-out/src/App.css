@@ -2,8 +2,10 @@ a, a:hover, a:focus {
   text-decoration: none;
 }
 
-.container {
+#container {
+  border: 1px solid #666;
   margin-top: 20px;
+  clear: both;
 }
 
 .row {
@@ -18,6 +20,12 @@ a, a:hover, a:focus {
   border-radius: 25px;
   background: #D1E0F0;
   box-shadow: 6px 6px 10px #999;
+}
+
+.board:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .light {
@@ -94,37 +102,4 @@ a, a:hover, a:focus {
   display: block;
 	max-height:600px;
 	transition: max-height .5s ease-in;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
