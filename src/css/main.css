@@ -33,9 +33,10 @@ a, a:hover, a:focus {
 }
 
 .light span {
+  text-align: center;
   background: radial-gradient(circle, #fff 20%, #999 80%);
   border: 1px solid #909090;
-  border-radius: 40px;
+  border-radius: 50%;
   display: block;
   height: 80px;
   margin:15px;
