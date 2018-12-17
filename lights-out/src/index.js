@@ -7,7 +7,7 @@ const size = 5;
 let lights = [];
 
 for(let i = 0; i < size * size; i++) {
-  lights.push({id: i + 1, on: 0});
+  lights.push({id: i + 1, on: 'on'});
 }
 
 const state = {
