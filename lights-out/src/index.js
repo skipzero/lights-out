@@ -7,14 +7,11 @@ const size = 5;
 let lights = [];
 
 for(let i = 0; i < size * size; i++) {
-  lights.push({id: i + 1, on: 'on'});
+  lights.push({id: i + 1, on: true});
 }
 
 const state = {
   lights,
 };
-
-console.log(state)
-  // state.lights.
 
 render(<Board lights={state.lights}/>, document.getElementById('container'));
