@@ -1,3 +1,19 @@
+
+.board {
+	width: 625px;
+	margin: 0 0 20px 300px;
+  padding:10px;
+  border-radius: 25px;
+  background: #D1E0F0;
+  box-shadow: 6px 6px 10px #999;
+}
+
+.board::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .lightWrapper {
   background: radial-gradient(circle, #cdd 50%, #72BBF7 80%);
   border-radius: 65px;

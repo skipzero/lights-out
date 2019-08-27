@@ -1,3 +1,13 @@
+
+.board {
+	width: 625px;
+	margin: 0 0 20px 300PX;
+  padding:10px;
+  border-radius: 25px;
+  background: #D1E0F0;
+  box-shadow: 6px 6px 10px #999;
+}
+
 .App {
   text-align: center;
 }

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import light from './Light.jsx';
 
 class Board extends Component {
@@ -26,12 +26,7 @@ class Board extends Component {
   }
 
   render() {
-    let lightArray = [];
-    for (let i = 0; i >= 24; i++) {
-      lightArray.push(this.light());
-    }
-    console.log(lightArray.map(light => light()))
-    return this.lights(); //lightArray.map(light => light);
+    return this.lights();
   }
 }
 
