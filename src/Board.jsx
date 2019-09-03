@@ -44,7 +44,6 @@ class Board extends Component {
     switchLight(y, x + 1);
     switchLight(y - 1, x);
     switchLight(y + 1, x);
-    console.log('SWITCH', board)
     const hasWon = board.every(row => row.every(light => !light));
 
     this.setState = {
