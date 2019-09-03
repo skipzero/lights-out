@@ -11,7 +11,7 @@ class Board extends Component {
     super(props)
     this.state = {
       hasWon: false,
-      board: this.createBoard,
+      board: this.createBoard(),
     }
   }
 
@@ -30,7 +30,6 @@ class Board extends Component {
 
   toggleLightSwitch(pos) {
     let {rows, cols} = this.props;
-    debugger;
     let board = this.state.board;
     let [y, x] = pos.split('-').map(Number);
 
@@ -45,7 +44,7 @@ class Board extends Component {
     switchLight(y, x + 1);
     switchLight(y - 1, x);
     switchLight(y + 1, x);
-
+    console.log('SWITCH', board)
     const hasWon = board.every(row => row.every(light => !light));
 
     this.setState = {
@@ -63,7 +62,11 @@ class Board extends Component {
       for (let x = 0; x < cols; x++) {
         let pos = `${y}-${x}`;
         row.push(
-           <Light key={pos} toggleLights={() => this.toggleLightSwitch(pos)}/>
+           <Light
+            isOn={this.state.board[y][x]}
+            key={pos}
+            toggleLights={() => this.toggleLightSwitch(pos)}
+          />
         );
       };
       board.push(row);
