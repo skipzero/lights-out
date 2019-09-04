@@ -37,6 +37,7 @@ class Board extends Component {
       if (x >= 0 && x < cols && y >= 0 && y < rows) {
         board[y][x] = !board[y][x];
       }
+      return board;
     }
 
     switchLight(y, x);
@@ -46,10 +47,10 @@ class Board extends Component {
     switchLight(y + 1, x);
     const hasWon = board.every(row => row.every(light => !light));
 
-    this.setState = {
+    this.setState({
       hasWon,
       board,
-    }
+    });
   }
 
   lightBoard() {

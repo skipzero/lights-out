@@ -36,3 +36,7 @@ span.light {
   margin:15px;
   width:80px;
 }
+
+.light-on span.light {
+	background: radial-gradient(circle, #fff 20%, #009 80%);
+}
