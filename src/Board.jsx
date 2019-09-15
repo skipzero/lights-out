@@ -21,7 +21,7 @@ class Board extends Component {
     for (let y = 0; y < rows; y++) {
       let row = [];
       for (let x = 0; x < cols; x++) {
-        row.push(false);
+        row.push(false);  // TODO: automate setup of the board; currently renders with no lights on.
       }
       board.push(row);
     }
