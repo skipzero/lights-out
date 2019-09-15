@@ -45,7 +45,7 @@ class Board extends Component {
     switchLight(y, x + 1);
     switchLight(y - 1, x);
     switchLight(y + 1, x);
-    const hasWon = board.every(row => row.every(light => !light));
+    const hasWon = board.every(row => row.every(light => !light)); // Check for winner; Surface if winner.
 
     this.setState({
       hasWon,
