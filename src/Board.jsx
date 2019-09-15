@@ -53,6 +53,13 @@ class Board extends Component {
     });
   }
 
+  initLights() {
+    const max = this.props.rows;
+    const random = Math.floor(Math.random() * Math.floor(max))
+    const light = [random, random];
+    this.toggleLightSwitch(light);
+  }
+
   lightBoard() {
     const board = [];
     let {rows, cols} = this.props;
